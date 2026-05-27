@@ -1,11 +1,7 @@
 package media
 
 import (
-	"fmt"
 	"io"
-	"reflect"
-	"strconv"
-	"strings"
 )
 
 type File struct {
@@ -85,1136 +81,442 @@ type File struct {
 }
 
 /*** SETTERS ***/
-func (m *File) SetAudioFilter(v string) {
-	m.audioFilter = v
-}
+func (m *File) SetAudioFilter(v string) { _ = "STUB: not implemented"; return }
 
 func (m *File) SetVideoFilter(v string) {
-	m.videoFilter = v
+	_ = "STUB: not implemented"
+
+	// Deprecated: Use SetVideoFilter instead.
+	return
 }
 
-// Deprecated: Use SetVideoFilter instead.
-func (m *File) SetFilter(v string) {
-	m.SetVideoFilter(v)
-}
+func (m *File) SetFilter(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetAspect(v string) {
-	m.aspect = v
-}
+func (m *File) SetAspect(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetResolution(v string) {
-	m.resolution = v
-}
+func (m *File) SetResolution(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetVideoBitRate(v string) {
-	m.videoBitRate = v
-}
+func (m *File) SetVideoBitRate(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetVideoBitRateTolerance(v int) {
-	m.videoBitRateTolerance = v
-}
+func (m *File) SetVideoBitRateTolerance(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetVideoMaxBitrate(v int) {
-	m.videoMaxBitRate = v
-}
+func (m *File) SetVideoMaxBitrate(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetVideoMinBitRate(v int) {
-	m.videoMinBitrate = v
-}
+func (m *File) SetVideoMinBitRate(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetVideoCodec(v string) {
-	m.videoCodec = v
-}
+func (m *File) SetVideoCodec(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetVframes(v int) {
-	m.vframes = v
-}
+func (m *File) SetVframes(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetFrameRate(v int) {
-	m.frameRate = v
-}
+func (m *File) SetFrameRate(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetAudioRate(v int) {
-	m.audioRate = v
-}
+func (m *File) SetAudioRate(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetAudioVariableBitrate() {
-	m.audioVariableBitrate = true
-}
+func (m *File) SetAudioVariableBitrate() { _ = "STUB: not implemented"; return }
 
-func (m *File) SetMaxKeyFrame(v int) {
-	m.maxKeyframe = v
-}
+func (m *File) SetMaxKeyFrame(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetMinKeyFrame(v int) {
-	m.minKeyframe = v
-}
+func (m *File) SetMinKeyFrame(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetKeyframeInterval(v int) {
-	m.keyframeInterval = v
-}
+func (m *File) SetKeyframeInterval(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetAudioCodec(v string) {
-	m.audioCodec = v
-}
+func (m *File) SetAudioCodec(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetAudioBitRate(v string) {
-	m.audioBitrate = v
-}
+func (m *File) SetAudioBitRate(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetAudioChannels(v int) {
-	m.audioChannels = v
-}
+func (m *File) SetAudioChannels(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetPixFmt(v string) {
-	m.pixFmt = v
-}
+func (m *File) SetPixFmt(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetBufferSize(v int) {
-	m.bufferSize = v
-}
+func (m *File) SetBufferSize(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetThreads(v int) {
-	m.threadset = true
-	m.threads = v
-}
+func (m *File) SetThreads(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetPreset(v string) {
-	m.preset = v
-}
+func (m *File) SetPreset(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetTune(v string) {
-	m.tune = v
-}
+func (m *File) SetTune(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetAudioProfile(v string) {
-	m.audioProfile = v
-}
+func (m *File) SetAudioProfile(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetVideoProfile(v string) {
-	m.videoProfile = v
-}
+func (m *File) SetVideoProfile(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetDuration(v string) {
-	m.duration = v
-}
+func (m *File) SetDuration(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetDurationInput(v string) {
-	m.durationInput = v
-}
+func (m *File) SetDurationInput(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetSeekTime(v string) {
-	m.seekTime = v
-}
+func (m *File) SetSeekTime(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetSeekTimeInput(v string) {
-	m.seekTimeInput = v
-}
+func (m *File) SetSeekTimeInput(v string) { _ = "STUB: not implemented"; return }
 
 // Q Scale must be integer between 1 to 31 - https://trac.ffmpeg.org/wiki/Encode/MPEG-4
-func (m *File) SetQScale(v uint32) {
-	m.qscale = v
-}
+func (m *File) SetQScale(v uint32) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetCRF(v uint32) {
-	m.crf = v
-}
+func (m *File) SetCRF(v uint32) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetStrict(v int) {
-	m.strict = v
-}
+func (m *File) SetStrict(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetSingleFile(v int) {
-	m.singleFile = v
-}
+func (m *File) SetSingleFile(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetSeekUsingTsInput(val bool) {
-	m.seekUsingTsInput = val
-}
+func (m *File) SetSeekUsingTsInput(val bool) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetCopyTs(val bool) {
-	m.copyTs = val
-}
+func (m *File) SetCopyTs(val bool) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetInputPath(val string) {
-	m.inputPath = val
-}
+func (m *File) SetInputPath(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetInputPipe(val bool) {
-	m.inputPipe = val
-}
+func (m *File) SetInputPipe(val bool) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetInputPipeReader(r io.ReadCloser) {
-	m.inputPipeReader = r
-}
+func (m *File) SetInputPipeReader(r io.ReadCloser) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetInputPipeWriter(w io.Writer) {
-	m.inputPipeWriter = w
-}
+func (m *File) SetInputPipeWriter(w io.Writer) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetOutputPipe(val bool) {
-	m.outputPipe = val
-}
+func (m *File) SetOutputPipe(val bool) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetOutputPipeReader(r io.Reader) {
-	m.outputPipeReader = r
-}
+func (m *File) SetOutputPipeReader(r io.Reader) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetOutputPipeWriter(w io.WriteCloser) {
-	m.outputPipeWriter = w
-}
+func (m *File) SetOutputPipeWriter(w io.WriteCloser) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetMovFlags(val string) {
-	m.movFlags = val
-}
+func (m *File) SetMovFlags(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetHideBanner(val bool) {
-	m.hideBanner = val
-}
+func (m *File) SetHideBanner(val bool) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetMuxDelay(val string) {
-	m.muxDelay = val
-}
+func (m *File) SetMuxDelay(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetOutputPath(val string) {
-	m.outputPath = val
-}
+func (m *File) SetOutputPath(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetOutputFormat(val string) {
-	m.outputFormat = val
-}
+func (m *File) SetOutputFormat(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetNativeFramerateInput(val bool) {
-	m.nativeFramerateInput = val
-}
+func (m *File) SetNativeFramerateInput(val bool) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetRtmpLive(val string) {
-	m.rtmpLive = val
-}
+func (m *File) SetRtmpLive(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetHlsListSize(val int) {
-	m.hlsListSize = val
-}
+func (m *File) SetHlsListSize(val int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetHlsSegmentDuration(val int) {
-	m.hlsSegmentDuration = val
-}
+func (m *File) SetHlsSegmentDuration(val int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetHlsPlaylistType(val string) {
-	m.hlsPlaylistType = val
-}
+func (m *File) SetHlsPlaylistType(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetHlsMasterPlaylistName(val string) {
-	m.hlsMasterPlaylistName = val
-}
+func (m *File) SetHlsMasterPlaylistName(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetHlsSegmentFilename(val string) {
-	m.hlsSegmentFilename = val
-}
+func (m *File) SetHlsSegmentFilename(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetHttpMethod(val string) {
-	m.httpMethod = val
-}
+func (m *File) SetHttpMethod(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetHttpKeepAlive(val bool) {
-	m.httpKeepAlive = val
-}
+func (m *File) SetHttpKeepAlive(val bool) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetHardwareAcceleration(val string) {
-	m.hwaccel = val
-}
+func (m *File) SetHardwareAcceleration(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetInputInitialOffset(val string) {
-	m.inputInitialOffset = val
-}
+func (m *File) SetInputInitialOffset(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetStreamIds(val map[int]string) {
-	m.streamIds = val
-}
+func (m *File) SetStreamIds(val map[int]string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetSkipVideo(val bool) {
-	m.skipVideo = val
-}
+func (m *File) SetSkipVideo(val bool) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetSkipAudio(val bool) {
-	m.skipAudio = val
-}
+func (m *File) SetSkipAudio(val bool) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetMetadata(v Metadata) {
-	m.metadata = v
-}
+func (m *File) SetMetadata(v Metadata) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetCompressionLevel(val int) {
-	m.compressionLevel = val
-}
+func (m *File) SetCompressionLevel(val int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetMapMetadata(val string) {
-	m.mapMetadata = val
-}
+func (m *File) SetMapMetadata(val string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetTags(val map[string]string) {
-	m.tags = val
-}
+func (m *File) SetTags(val map[string]string) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetBframe(v int) {
-	m.bframe = v
-}
+func (m *File) SetBframe(v int) { _ = "STUB: not implemented"; return }
 
-func (m *File) SetRawInputArgs(args []string) {
-	m.rawInputArgs = args
-}
+func (m *File) SetRawInputArgs(args []string) { _ = "STUB: not implemented"; return }
 
 func (m *File) SetRawOutputArgs(args []string) {
-	m.rawOutputArgs = args
-}
+	_ = "STUB: not implemented"
+	return
 
-/*** GETTERS ***/
+	/*** GETTERS ***/
+}
 
 // Deprecated: Use VideoFilter instead.
-func (m *File) Filter() string {
-	return m.VideoFilter()
-}
+func (m *File) Filter() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) VideoFilter() string {
-	return m.videoFilter
-}
+func (m *File) VideoFilter() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) AudioFilter() string {
-	return m.audioFilter
-}
+func (m *File) AudioFilter() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) Aspect() string {
-	return m.aspect
-}
+func (m *File) Aspect() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) Resolution() string {
-	return m.resolution
-}
+func (m *File) Resolution() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) VideoBitrate() string {
-	return m.videoBitRate
-}
+func (m *File) VideoBitrate() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) VideoBitRateTolerance() int {
-	return m.videoBitRateTolerance
-}
+func (m *File) VideoBitRateTolerance() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) VideoMaxBitRate() int {
-	return m.videoMaxBitRate
-}
+func (m *File) VideoMaxBitRate() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) VideoMinBitRate() int {
-	return m.videoMinBitrate
-}
+func (m *File) VideoMinBitRate() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) VideoCodec() string {
-	return m.videoCodec
-}
+func (m *File) VideoCodec() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) Vframes() int {
-	return m.vframes
-}
+func (m *File) Vframes() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) FrameRate() int {
-	return m.frameRate
-}
+func (m *File) FrameRate() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) GetPixFmt() string {
-	return m.pixFmt
-}
+func (m *File) GetPixFmt() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) AudioRate() int {
-	return m.audioRate
-}
+func (m *File) AudioRate() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) MaxKeyFrame() int {
-	return m.maxKeyframe
-}
+func (m *File) MaxKeyFrame() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) MinKeyFrame() int {
-	return m.minKeyframe
-}
+func (m *File) MinKeyFrame() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) KeyFrameInterval() int {
-	return m.keyframeInterval
-}
+func (m *File) KeyFrameInterval() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) AudioCodec() string {
-	return m.audioCodec
-}
+func (m *File) AudioCodec() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) AudioBitrate() string {
-	return m.audioBitrate
-}
+func (m *File) AudioBitrate() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) AudioChannels() int {
-	return m.audioChannels
-}
+func (m *File) AudioChannels() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) BufferSize() int {
-	return m.bufferSize
-}
+func (m *File) BufferSize() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) Threads() int {
-	return m.threads
-}
+func (m *File) Threads() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) Target() string {
-	return m.target
-}
+func (m *File) Target() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) Duration() string {
-	return m.duration
-}
+func (m *File) Duration() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) DurationInput() string {
-	return m.durationInput
-}
+func (m *File) DurationInput() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) SeekTime() string {
-	return m.seekTime
-}
+func (m *File) SeekTime() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) Preset() string {
-	return m.preset
-}
+func (m *File) Preset() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) AudioProfile() string {
-	return m.audioProfile
-}
+func (m *File) AudioProfile() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) VideoProfile() string {
-	return m.videoProfile
-}
+func (m *File) VideoProfile() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) Tune() string {
-	return m.tune
-}
+func (m *File) Tune() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) SeekTimeInput() string {
-	return m.seekTimeInput
-}
+func (m *File) SeekTimeInput() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) QScale() uint32 {
-	return m.qscale
-}
+func (m *File) QScale() uint32 { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) CRF() uint32 {
-	return m.crf
-}
+func (m *File) CRF() uint32 { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) Strict() int {
-	return m.strict
-}
+func (m *File) Strict() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) SingleFile() int {
-	return m.singleFile
-}
+func (m *File) SingleFile() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) MuxDelay() string {
-	return m.muxDelay
-}
+func (m *File) MuxDelay() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) SeekUsingTsInput() bool {
-	return m.seekUsingTsInput
-}
+func (m *File) SeekUsingTsInput() bool { _ = "STUB: not implemented"; return false }
 
-func (m *File) CopyTs() bool {
-	return m.copyTs
-}
+func (m *File) CopyTs() bool { _ = "STUB: not implemented"; return false }
 
-func (m *File) InputPath() string {
-	return m.inputPath
-}
+func (m *File) InputPath() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) InputPipe() bool {
-	return m.inputPipe
-}
+func (m *File) InputPipe() bool { _ = "STUB: not implemented"; return false }
 
 func (m *File) InputPipeReader() io.ReadCloser {
-	return m.inputPipeReader
+	_ = "STUB: not implemented"
+	return *new(io.ReadCloser)
 }
 
-func (m *File) InputPipeWriter() io.Writer {
-	return m.inputPipeWriter
-}
+func (m *File) InputPipeWriter() io.Writer { _ = "STUB: not implemented"; return *new(io.Writer) }
 
-func (m *File) OutputPipe() bool {
-	return m.outputPipe
-}
+func (m *File) OutputPipe() bool { _ = "STUB: not implemented"; return false }
 
-func (m *File) OutputPipeReader() io.Reader {
-	return m.outputPipeReader
-}
+func (m *File) OutputPipeReader() io.Reader { _ = "STUB: not implemented"; return *new(io.Reader) }
 
 func (m *File) OutputPipeWriter() io.WriteCloser {
-	return m.outputPipeWriter
+	_ = "STUB: not implemented"
+	return *new(io.WriteCloser)
 }
 
-func (m *File) MovFlags() string {
-	return m.movFlags
-}
+func (m *File) MovFlags() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) HideBanner() bool {
-	return m.hideBanner
-}
+func (m *File) HideBanner() bool { _ = "STUB: not implemented"; return false }
 
-func (m *File) OutputPath() string {
-	return m.outputPath
-}
+func (m *File) OutputPath() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) OutputFormat() string {
-	return m.outputFormat
-}
+func (m *File) OutputFormat() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) NativeFramerateInput() bool {
-	return m.nativeFramerateInput
-}
+func (m *File) NativeFramerateInput() bool { _ = "STUB: not implemented"; return false }
 
-func (m *File) RtmpLive() string {
-	return m.rtmpLive
-}
+func (m *File) RtmpLive() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) HlsListSize() int {
-	return m.hlsListSize
-}
+func (m *File) HlsListSize() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) HlsSegmentDuration() int {
-	return m.hlsSegmentDuration
-}
+func (m *File) HlsSegmentDuration() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) HlsMasterPlaylistName() string {
-	return m.hlsMasterPlaylistName
-}
+func (m *File) HlsMasterPlaylistName() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) HlsSegmentFilename() string {
-	return m.hlsSegmentFilename
-}
+func (m *File) HlsSegmentFilename() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) HlsPlaylistType() string {
-	return m.hlsPlaylistType
-}
+func (m *File) HlsPlaylistType() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) InputInitialOffset() string {
-	return m.inputInitialOffset
-}
+func (m *File) InputInitialOffset() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) HttpMethod() string {
-	return m.httpMethod
-}
+func (m *File) HttpMethod() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) HttpKeepAlive() bool {
-	return m.httpKeepAlive
-}
+func (m *File) HttpKeepAlive() bool { _ = "STUB: not implemented"; return false }
 
-func (m *File) HardwareAcceleration() string {
-	return m.hwaccel
-}
+func (m *File) HardwareAcceleration() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) StreamIds() map[int]string {
-	return m.streamIds
-}
+func (m *File) StreamIds() map[int]string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) SkipVideo() bool {
-	return m.skipVideo
-}
+func (m *File) SkipVideo() bool { _ = "STUB: not implemented"; return false }
 
-func (m *File) SkipAudio() bool {
-	return m.skipAudio
-}
+func (m *File) SkipAudio() bool { _ = "STUB: not implemented"; return false }
 
-func (m *File) Metadata() Metadata {
-	return m.metadata
-}
+func (m *File) Metadata() Metadata { _ = "STUB: not implemented"; return *new(Metadata) }
 
-func (m *File) CompressionLevel() int {
-	return m.compressionLevel
-}
+func (m *File) CompressionLevel() int { _ = "STUB: not implemented"; return 0 }
 
-func (m *File) MapMetadata() string {
-	return m.mapMetadata
-}
+func (m *File) MapMetadata() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) Tags() map[string]string {
-	return m.tags
-}
+func (m *File) Tags() map[string]string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) SetEncryptionKey(v string) {
-	m.encryptionKey = v
-}
+func (m *File) SetEncryptionKey(v string) { _ = "STUB: not implemented"; return }
 
-func (m *File) EncryptionKey() string {
-	return m.encryptionKey
-}
+func (m *File) EncryptionKey() string { _ = "STUB: not implemented"; return "" }
 
-func (m *File) RawInputArgs() []string {
-	return m.rawInputArgs
-}
+func (m *File) RawInputArgs() []string { _ = "STUB: not implemented"; return nil }
 
 func (m *File) RawOutputArgs() []string {
-	return m.rawOutputArgs
+	_ = "STUB: not implemented"
+	return
+
+	/** OPTS **/
+	nil
 }
 
-/** OPTS **/
-func (m *File) ToStrCommand() []string {
-	var strCommand []string
+func (m *File) ToStrCommand() []string { _ = "STUB: not implemented"; return nil }
 
-	opts := []string{
-		"SeekTimeInput",
-		"SeekUsingTsInput",
-		"NativeFramerateInput",
-		"DurationInput",
-		"RtmpLive",
-		"InputInitialOffset",
-		"HardwareAcceleration",
-		"RawInputArgs",
-		"InputPath",
-		"InputPipe",
-		"HideBanner",
-		"Aspect",
-		"Resolution",
-		"FrameRate",
-		"AudioRate",
-		"VideoCodec",
-		"Vframes",
-		"VideoBitRate",
-		"VideoBitRateTolerance",
-		"VideoMaxBitRate",
-		"VideoMinBitRate",
-		"VideoProfile",
-		"SkipVideo",
-		"AudioCodec",
-		"AudioBitRate",
-		"AudioChannels",
-		"AudioProfile",
-		"SkipAudio",
-		"CRF",
-		"QScale",
-		"Strict",
-		"SingleFile",
-		"BufferSize",
-		"MuxDelay",
-		"Threads",
-		"KeyframeInterval",
-		"Preset",
-		"PixFmt",
-		"Tune",
-		"Target",
-		"SeekTime",
-		"Duration",
-		"CopyTs",
-		"StreamIds",
-		"MovFlags",
-		"RawOutputArgs",
-		"OutputFormat",
-		"OutputPipe",
-		"HlsListSize",
-		"HlsSegmentDuration",
-		"HlsPlaylistType",
-		"HlsMasterPlaylistName",
-		"HlsSegmentFilename",
-		"AudioFilter",
-		"VideoFilter",
-		"HttpMethod",
-		"HttpKeepAlive",
-		"CompressionLevel",
-		"MapMetadata",
-		"Tags",
-		"EncryptionKey",
-		"OutputPath",
-		"Bframe",
-		"MovFlags",
-	}
+func (m *File) ObtainAudioFilter() []string { _ = "STUB: not implemented"; return nil }
 
-	for _, name := range opts {
-		opt := reflect.ValueOf(m).MethodByName(fmt.Sprintf("Obtain%s", name))
-		if (opt != reflect.Value{}) {
-			result := opt.Call([]reflect.Value{})
-
-			if val, ok := result[0].Interface().([]string); ok {
-				strCommand = append(strCommand, val...)
-			}
-		}
-	}
-
-	return strCommand
-}
-
-func (m *File) ObtainAudioFilter() []string {
-	if m.audioFilter != "" {
-		return []string{"-af", m.audioFilter}
-	}
-	return nil
-}
-
-func (m *File) ObtainVideoFilter() []string {
-	if m.videoFilter != "" {
-		return []string{"-vf", m.videoFilter}
-	}
-	return nil
-}
+func (m *File) ObtainVideoFilter() []string { _ = "STUB: not implemented"; return nil }
 
 func (m *File) ObtainAspect() []string {
+	_ = "STUB: not implemented"
 	// Set aspect
-	if m.resolution != "" {
-		resolution := strings.Split(m.resolution, "x")
-		if len(resolution) != 0 {
-			width, _ := strconv.ParseFloat(resolution[0], 64)
-			height, _ := strconv.ParseFloat(resolution[1], 64)
-			return []string{"-aspect", fmt.Sprintf("%f", width/height)}
-		}
-	}
-
-	if m.aspect != "" {
-		return []string{"-aspect", m.aspect}
-	}
 	return nil
 }
 
-func (m *File) ObtainHardwareAcceleration() []string {
-	if m.hwaccel != "" {
-		return []string{"-hwaccel", m.hwaccel}
-	}
-	return nil
-}
+func (m *File) ObtainHardwareAcceleration() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainInputPath() []string {
-	if m.inputPath != "" {
-		return []string{"-i", m.inputPath}
-	}
-	return nil
-}
+func (m *File) ObtainInputPath() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainInputPipe() []string {
-	if m.inputPipe {
-		return []string{"-i", "pipe:0"}
-	}
-	return nil
-}
+func (m *File) ObtainInputPipe() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainOutputPipe() []string {
-	if m.outputPipe {
-		return []string{"pipe:1"}
-	}
-	return nil
-}
+func (m *File) ObtainOutputPipe() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainMovFlags() []string {
-	if m.movFlags != "" {
-		return []string{"-movflags", m.movFlags}
-	}
-	return nil
-}
+func (m *File) ObtainMovFlags() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainHideBanner() []string {
-	if m.hideBanner {
-		return []string{"-hide_banner"}
-	}
-	return nil
-}
+func (m *File) ObtainHideBanner() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainNativeFramerateInput() []string {
-	if m.nativeFramerateInput {
-		return []string{"-re"}
-	}
-	return nil
-}
+func (m *File) ObtainNativeFramerateInput() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainOutputPath() []string {
-	if m.outputPath != "" {
-		return []string{m.outputPath}
-	}
-	return nil
-}
+func (m *File) ObtainOutputPath() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainVideoCodec() []string {
-	if m.videoCodec != "" {
-		return []string{"-c:v", m.videoCodec}
-	}
-	return nil
-}
+func (m *File) ObtainVideoCodec() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainVframes() []string {
-	if m.vframes != 0 {
-		return []string{"-vframes", fmt.Sprintf("%d", m.vframes)}
-	}
-	return nil
-}
+func (m *File) ObtainVframes() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainFrameRate() []string {
-	if m.frameRate != 0 {
-		return []string{"-r", fmt.Sprintf("%d", m.frameRate)}
-	}
-	return nil
-}
+func (m *File) ObtainFrameRate() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainAudioRate() []string {
-	if m.audioRate != 0 {
-		return []string{"-ar", fmt.Sprintf("%d", m.audioRate)}
-	}
-	return nil
-}
+func (m *File) ObtainAudioRate() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainResolution() []string {
-	if m.resolution != "" {
-		return []string{"-s", m.resolution}
-	}
-	return nil
-}
+func (m *File) ObtainResolution() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainVideoBitRate() []string {
-	if m.videoBitRate != "" {
-		return []string{"-b:v", m.videoBitRate}
-	}
-	return nil
-}
+func (m *File) ObtainVideoBitRate() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainAudioCodec() []string {
-	if m.audioCodec != "" {
-		return []string{"-c:a", m.audioCodec}
-	}
-	return nil
-}
+func (m *File) ObtainAudioCodec() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainAudioBitRate() []string {
-	switch {
-	case !m.audioVariableBitrate && m.audioBitrate != "":
-		return []string{"-b:a", m.audioBitrate}
-	case m.audioVariableBitrate && m.audioBitrate != "":
-		return []string{"-q:a", m.audioBitrate}
-	case m.audioVariableBitrate:
-		return []string{"-q:a", "0"}
-	default:
-		return nil
-	}
-}
+func (m *File) ObtainAudioBitRate() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainAudioChannels() []string {
-	if m.audioChannels != 0 {
-		return []string{"-ac", fmt.Sprintf("%d", m.audioChannels)}
-	}
-	return nil
-}
+func (m *File) ObtainAudioChannels() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainVideoMaxBitRate() []string {
-	if m.videoMaxBitRate != 0 {
-		return []string{"-maxrate", fmt.Sprintf("%dk", m.videoMaxBitRate)}
-	}
-	return nil
-}
+func (m *File) ObtainVideoMaxBitRate() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainVideoMinBitRate() []string {
-	if m.videoMinBitrate != 0 {
-		return []string{"-minrate", fmt.Sprintf("%dk", m.videoMinBitrate)}
-	}
-	return nil
-}
+func (m *File) ObtainVideoMinBitRate() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainBufferSize() []string {
-	if m.bufferSize != 0 {
-		return []string{"-bufsize", fmt.Sprintf("%dk", m.bufferSize)}
-	}
-	return nil
-}
+func (m *File) ObtainBufferSize() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainVideoBitRateTolerance() []string {
-	if m.videoBitRateTolerance != 0 {
-		return []string{"-bt", fmt.Sprintf("%dk", m.videoBitRateTolerance)}
-	}
-	return nil
-}
+func (m *File) ObtainVideoBitRateTolerance() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainThreads() []string {
-	if m.threadset {
-		return []string{"-threads", fmt.Sprintf("%d", m.threads)}
-	}
-	return nil
-}
+func (m *File) ObtainThreads() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainTarget() []string {
-	if m.target != "" {
-		return []string{"-target", m.target}
-	}
-	return nil
-}
+func (m *File) ObtainTarget() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainDuration() []string {
-	if m.duration != "" {
-		return []string{"-t", m.duration}
-	}
-	return nil
-}
+func (m *File) ObtainDuration() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainDurationInput() []string {
-	if m.durationInput != "" {
-		return []string{"-t", m.durationInput}
-	}
-	return nil
-}
+func (m *File) ObtainDurationInput() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainKeyframeInterval() []string {
-	if m.keyframeInterval != 0 {
-		return []string{"-g", fmt.Sprintf("%d", m.keyframeInterval)}
-	}
-	return nil
-}
+func (m *File) ObtainKeyframeInterval() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainSeekTime() []string {
-	if m.seekTime != "" {
-		return []string{"-ss", m.seekTime}
-	}
-	return nil
-}
+func (m *File) ObtainSeekTime() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainSeekTimeInput() []string {
-	if m.seekTimeInput != "" {
-		return []string{"-ss", m.seekTimeInput}
-	}
-	return nil
-}
+func (m *File) ObtainSeekTimeInput() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainPreset() []string {
-	if m.preset != "" {
-		return []string{"-preset", m.preset}
-	}
-	return nil
-}
+func (m *File) ObtainPreset() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainTune() []string {
-	if m.tune != "" {
-		return []string{"-tune", m.tune}
-	}
-	return nil
-}
+func (m *File) ObtainTune() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainCRF() []string {
-	if m.crf != 0 {
-		return []string{"-crf", fmt.Sprintf("%d", m.crf)}
-	}
-	return nil
-}
+func (m *File) ObtainCRF() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainQScale() []string {
-	if m.qscale != 0 {
-		return []string{"-qscale", fmt.Sprintf("%d", m.qscale)}
-	}
-	return nil
-}
+func (m *File) ObtainQScale() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainStrict() []string {
-	if m.strict != 0 {
-		return []string{"-strict", fmt.Sprintf("%d", m.strict)}
-	}
-	return nil
-}
+func (m *File) ObtainStrict() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainSingleFile() []string {
-	if m.singleFile != 0 {
-		return []string{"-single_file", fmt.Sprintf("%d", m.singleFile)}
-	}
-	return nil
-}
+func (m *File) ObtainSingleFile() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainVideoProfile() []string {
-	if m.videoProfile != "" {
-		return []string{"-profile:v", m.videoProfile}
-	}
-	return nil
-}
+func (m *File) ObtainVideoProfile() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainAudioProfile() []string {
-	if m.audioProfile != "" {
-		return []string{"-profile:a", m.audioProfile}
-	}
-	return nil
-}
+func (m *File) ObtainAudioProfile() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainCopyTs() []string {
-	if m.copyTs {
-		return []string{"-copyts"}
-	}
-	return nil
-}
+func (m *File) ObtainCopyTs() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainOutputFormat() []string {
-	if m.outputFormat != "" {
-		return []string{"-f", m.outputFormat}
-	}
-	return nil
-}
+func (m *File) ObtainOutputFormat() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainMuxDelay() []string {
-	if m.muxDelay != "" {
-		return []string{"-muxdelay", m.muxDelay}
-	}
-	return nil
-}
+func (m *File) ObtainMuxDelay() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainSeekUsingTsInput() []string {
-	if m.seekUsingTsInput {
-		return []string{"-seek_timestamp", "1"}
-	}
-	return nil
-}
+func (m *File) ObtainSeekUsingTsInput() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainRtmpLive() []string {
-	if m.rtmpLive != "" {
-		return []string{"-rtmp_live", m.rtmpLive}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainRtmpLive() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainHlsPlaylistType() []string {
-	if m.hlsPlaylistType != "" {
-		return []string{"-hls_playlist_type", m.hlsPlaylistType}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainHlsPlaylistType() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainInputInitialOffset() []string {
-	if m.inputInitialOffset != "" {
-		return []string{"-itsoffset", m.inputInitialOffset}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainInputInitialOffset() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainHlsListSize() []string {
-	return []string{"-hls_list_size", fmt.Sprintf("%d", m.hlsListSize)}
-}
+func (m *File) ObtainHlsListSize() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainHlsSegmentDuration() []string {
-	if m.hlsSegmentDuration != 0 {
-		return []string{"-hls_time", fmt.Sprintf("%d", m.hlsSegmentDuration)}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainHlsSegmentDuration() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainHlsMasterPlaylistName() []string {
-	if m.hlsMasterPlaylistName != "" {
-		return []string{"-master_pl_name", fmt.Sprintf("%s", m.hlsMasterPlaylistName)}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainHlsMasterPlaylistName() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainHlsSegmentFilename() []string {
-	if m.hlsSegmentFilename != "" {
-		return []string{"-hls_segment_filename", fmt.Sprintf("%s", m.hlsSegmentFilename)}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainHlsSegmentFilename() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainHttpMethod() []string {
-	if m.httpMethod != "" {
-		return []string{"-method", m.httpMethod}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainHttpMethod() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainPixFmt() []string {
-	if m.pixFmt != "" {
-		return []string{"-pix_fmt", m.pixFmt}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainPixFmt() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainHttpKeepAlive() []string {
-	if m.httpKeepAlive {
-		return []string{"-multiple_requests", "1"}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainHttpKeepAlive() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainSkipVideo() []string {
-	if m.skipVideo {
-		return []string{"-vn"}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainSkipVideo() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainSkipAudio() []string {
-	if m.skipAudio {
-		return []string{"-an"}
-	} else {
-		return nil
-	}
-}
+func (m *File) ObtainSkipAudio() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainStreamIds() []string {
-	if m.streamIds != nil && len(m.streamIds) != 0 {
-		result := []string{}
-		for i, val := range m.streamIds {
-			result = append(result, []string{"-streamid", fmt.Sprintf("%d:%s", i, val)}...)
-		}
-		return result
-	}
-	return nil
-}
+func (m *File) ObtainStreamIds() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainCompressionLevel() []string {
-	if m.compressionLevel != 0 {
-		return []string{"-compression_level", fmt.Sprintf("%d", m.compressionLevel)}
-	}
-	return nil
-}
+func (m *File) ObtainCompressionLevel() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainMapMetadata() []string {
-	if m.mapMetadata != "" {
-		return []string{"-map_metadata", m.mapMetadata}
-	}
-	return nil
-}
+func (m *File) ObtainMapMetadata() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainEncryptionKey() []string {
-	if m.encryptionKey != "" {
-		return []string{"-hls_key_info_file", m.encryptionKey}
-	}
+func (m *File) ObtainEncryptionKey() []string { _ = "STUB: not implemented"; return nil }
 
-	return nil
-}
+func (m *File) ObtainBframe() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainBframe() []string {
-	if m.bframe != 0 {
-		return []string{"-bf", fmt.Sprintf("%d", m.bframe)}
-	}
-	return nil
-}
+func (m *File) ObtainTags() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainTags() []string {
-	if m.tags != nil && len(m.tags) != 0 {
-		result := []string{}
-		for key, val := range m.tags {
-			result = append(result, []string{"-metadata", fmt.Sprintf("%s=%s", key, val)}...)
-		}
-		return result
-	}
-	return nil
-}
+func (m *File) ObtainRawInputArgs() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainRawInputArgs() []string {
-	return m.rawInputArgs
-}
+func (m *File) ObtainRawOutputArgs() []string { _ = "STUB: not implemented"; return nil }
 
-func (m *File) ObtainRawOutputArgs() []string {
-	return m.rawOutputArgs
-}
-
-func CheckFileType(streams []Streams) string {
-	for i := 0; i < len(streams); i++ {
-		st := streams[i]
-		if st.CodecType == "video" {
-			return "video"
-		}
-	}
-
-	return "audio"
-}
+func CheckFileType(streams []Streams) string { _ = "STUB: not implemented"; return "" }

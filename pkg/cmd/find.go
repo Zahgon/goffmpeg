@@ -6,11 +6,4 @@ var (
 	platform = runtime.GOOS
 )
 
-func getFindCommand() string {
-	switch platform {
-	case "windows":
-		return "where"
-	default:
-		return "which"
-	}
-}
+func getFindCommand() string { _ = "STUB: not implemented"; return "" }
